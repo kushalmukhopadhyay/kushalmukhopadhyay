@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kushal Mukhopadhyay | ML Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .project-card:hover { transform: translateY(-8px); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .skill-tag { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans scroll-smooth">
+
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-2xl tracking-tighter gradient-text">KUSHAL MUKHOPADHYAY</span>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="mailto:kushalmukhopadhyay8@gmail.com" class="text-blue-600 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Get In Touch</a>
+            </div>
+        </div>
+    </nav>
+
+<header id="about" class="pt-40 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <!-- Photo -->
+        <img src="kushal.jpg" alt="Kushal Mukhopadhyay" class="w-64 h-64 mx-auto full rounded-full border-4 border-blue-600 mb-6 shadow-lg">
+
+        <h1 class="text-6xl md:text-7xl font-black mb-6 tracking-tight">Machine Learning <span class="text-blue-600">Engineer</span></h1>
+        <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+            BTech AI & Data Science student and aspiring ML Engineer, building efficient multimodal and LLM-based systems. Experienced with PyTorch, LangChain, Docker, AWS, and GCP, focused on production-ready AI solutions.
+        </p>
+        <div class="flex justify-center space-x-6">
+            <a href="https://github.com/10firestorm" target="_blank" class="text-3xl hover:text-blue-600 transition"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/kushal-mukhopadhyay-88aa38291" target="_blank" class="text-3xl hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:kushalmukhopadhyay8@gmail.com" class="text-3xl hover:text-blue-600 transition"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</header>
+
+<section id="projects" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-16">
+            <h2 class="text-4xl font-bold mb-4">Core Projects</h2>
+            <div class="h-1.5 w-20 bg-blue-600 rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- LatentFuse v2 -->
+            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                    <i class="fas fa-cogs text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">LatentFuse v2</h4>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                    Built a lightweight multimodal model fusing image and text via <strong>query-based latent attention</strong>. 
+                    Optimized with top-k token pruning and sparse cross-modal attention to drastically reduce FLOPs and memory usage compared to CLIP ViT-B/32.
+                </p>
+                <div class="text-xs font-bold text-slate-400 uppercase">ResNet-18 • DistilBERT • PyTorch AMP • Contrastive Learning</div>
+            </div>
+
+            <!-- Website & PDF QA System -->
+            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                    <i class="fas fa-file-pdf text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Website & PDF QA System</h4>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                    End-to-end RAG system using LangChain and Mixtral-8x7B. Optimized with FAISS vector store for real-time information retrieval.
+                </p>
+                <div class="text-xs font-bold text-slate-400 uppercase">LangChain • FAISS • Gradio</div>
+            </div>
+
+            <!-- 2-Stage LLM Guardrails -->
+            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6 text-red-600">
+                    <i class="fas fa-shield-alt text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">2-Stage LLM Guardrails</h4>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                    Moderation pipeline detecting jailbreaks and PII leaks. Integrated toxic-BERT and JailbreakBench similarity checks.
+                </p>
+                <div class="text-xs font-bold text-slate-400 uppercase">Transformers • Toxic-BERT</div>
+            </div>
+
+            <!-- Metadata & Profiling Engine -->
+            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6 text-purple-600">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Metadata & Profiling Engine</h4>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                    Dataset-agnostic engine generating feature importance and inter-feature relationships (Cramer’s V) for tabular data.
+                </p>
+                <div class="text-xs font-bold text-slate-400 uppercase">Pandas • Scikit-Learn</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="skills" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 border-l-4 border-blue-500 pl-6">Technical Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">Deep Learning & Frameworks</h5>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>PyTorch & TensorFlow</li>
+                        <li>CNNs, RNNs, Transformers</li>
+                        <li>Computer Vision & NLP</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">MLOps & Cloud</h5>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>AWS, GCP, Azure</li>
+                        <li>Docker & Kubernetes</li>
+                        <li>MLflow & Weights & Biases</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">Data Engineering</h5>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>Spark, Airflow, Kafka</li>
+                        <li>NoSQL & ETL Pipelines</li>
+                        <li>Feature Engineering</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-slate-200 text-center">
+        <p class="text-slate-500 font-medium italic">"Building the next generation of efficient AI."</p>
+        <div class="mt-6 flex justify-center space-x-4 opacity-50">
+            <i class="fab fa-python"></i>
+            <i class="fas fa-brain"></i>
+            <i class="fas fa-network-wired"></i>
+        </div>
+        <p class="text-xs mt-8 text-slate-400">© 2024 Kushal Mukhopadhyay. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
