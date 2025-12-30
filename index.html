@@ -9,11 +9,60 @@
     <style>
         .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .project-card:hover { transform: translateY(-8px); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        
+        /* --- MARQUEE ANIMATION --- */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .marquee-track {
+            display: inline-flex;
+            animation: scroll 40s linear infinite;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .tech-icon {
+            height: 40px;
+            width: auto;
+            margin: 0 30px;
+            opacity: 0.5;
+            transition: all 0.3s;
+            filter: grayscale(100%);
+        }
+        .tech-icon:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.2);
+        }
+
+        /* Background patches float animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(var(--rot)); }
+            50% { transform: translateY(-20px) rotate(var(--rot)); }
+            100% { transform: translateY(0px) rotate(var(--rot)); }
+        }
+        .patch {
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.03;
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+        }
         .skill-tag { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans scroll-smooth">
-
+    <div class="fixed inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
+        <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" class="patch" style="top: 10%; right: -5%; width: 300px; --rot: -15deg;">
+        <img src="https://cdn.simpleicons.org/pytorch/1e293b" class="patch" style="top: 40%; left: -5%; width: 250px; --rot: 10deg;">
+        <img src="https://cdn.simpleicons.org/kubernetes/1e293b" class="patch" style="top: 80%; right: 10%; width: 200px; --rot: -10deg;">
+        <img src="https://cdn.simpleicons.org/huggingface/1e293b" class="patch" style="top: 15%; left: 20%; width: 150px; --rot: 20deg;">
+    </div>
     <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="font-bold text-2xl tracking-tighter gradient-text">KUSHAL MUKHOPADHYAY</span>
@@ -50,7 +99,67 @@
         </div>
     </div>
 </header>
+    <section id="stack" class="py-10 bg-slate-100 border-y border-slate-200 relative z-20">
+        <div class="text-center mb-6">
+            <span class="text-xs font-bold tracking-widest text-slate-400 uppercase">My Technical Ecosystem</span>
+        </div>
+        
+        <div class="marquee-container mb-8">
+            <div class="marquee-track">
+                <img title="AWS" src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" class="tech-icon">
+                <img title="GCP" src="https://cdn.simpleicons.org/googlecloud/4285F4" class="tech-icon">
+                <img title="Terraform" src="https://cdn.simpleicons.org/terraform/7B42BC" class="tech-icon">
+                <img title="Docker" src="https://cdn.simpleicons.org/docker/2496ED" class="tech-icon">
+                <img title="Kubernetes" src="https://cdn.simpleicons.org/kubernetes/326CE5" class="tech-icon">
+                <img title="Ansible" src="https://cdn.simpleicons.org/ansible/EE0000" class="tech-icon">
+                <img title="Apache Spark" src="https://cdn.simpleicons.org/apachespark/E25A1C" class="tech-icon">
+                <img title="Databricks" src="https://cdn.simpleicons.org/databricks/FF3621" class="tech-icon">
+                <img title="Snowflake" src="https://cdn.simpleicons.org/snowflake/29B5E8" class="tech-icon">
+                <img title="PostgreSQL" src="https://cdn.simpleicons.org/postgresql/4169E1" class="tech-icon">
+                <img title="MongoDB" src="https://cdn.simpleicons.org/mongodb/47A248" class="tech-icon">
+                <img title="Kafka" src="https://cdn.simpleicons.org/apachekafka/231F20" class="tech-icon">
+                <img title="Grafana" src="https://cdn.simpleicons.org/grafana/F46800" class="tech-icon">
+                <img title="Prometheus" src="https://cdn.simpleicons.org/prometheus/E6522C" class="tech-icon">
+                <img title="PyTorch" src="https://cdn.simpleicons.org/pytorch/EE4C2C" class="tech-icon">
+                <img title="TensorFlow" src="https://cdn.simpleicons.org/tensorflow/FF6F00" class="tech-icon">
+                <img title="Hugging Face" src="https://cdn.simpleicons.org/huggingface/FFD21E" class="tech-icon">
+                <img title="LangChain" src="https://cdn.simpleicons.org/langchain/1C3C3C" class="tech-icon">
+                <img title="MLflow" src="https://cdn.simpleicons.org/mlflow/0194E2" class="tech-icon">
+                <img title="Airflow" src="https://cdn.simpleicons.org/apacheairflow/017CEE" class="tech-icon">
+                <img title="GitLab" src="https://cdn.simpleicons.org/gitlab/FC6D26" class="tech-icon">
+                <img title="GitHub Actions" src="https://cdn.simpleicons.org/githubactions/2088FF" class="tech-icon">
+                <img title="n8n" src="https://cdn.simpleicons.org/n8n/EA4B71" class="tech-icon">
+                <img title="Zapier" src="https://cdn.simpleicons.org/zapier/FF4F00" class="tech-icon">
+                <img title="Apache" src="https://cdn.simpleicons.org/apache/017CEE" class="tech-icon">
 
+                <img title="AWS" src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" class="tech-icon">
+                <img title="GCP" src="https://cdn.simpleicons.org/googlecloud/4285F4" class="tech-icon">
+                <img title="Terraform" src="https://cdn.simpleicons.org/terraform/7B42BC" class="tech-icon">
+                <img title="Docker" src="https://cdn.simpleicons.org/docker/2496ED" class="tech-icon">
+                <img title="Kubernetes" src="https://cdn.simpleicons.org/kubernetes/326CE5" class="tech-icon">
+                <img title="Ansible" src="https://cdn.simpleicons.org/ansible/EE0000" class="tech-icon">
+                <img title="Apache Spark" src="https://cdn.simpleicons.org/apachespark/E25A1C" class="tech-icon">
+                <img title="Databricks" src="https://cdn.simpleicons.org/databricks/FF3621" class="tech-icon">
+                <img title="Snowflake" src="https://cdn.simpleicons.org/snowflake/29B5E8" class="tech-icon">
+                <img title="PostgreSQL" src="https://cdn.simpleicons.org/postgresql/4169E1" class="tech-icon">
+                <img title="MongoDB" src="https://cdn.simpleicons.org/mongodb/47A248" class="tech-icon">
+                <img title="Kafka" src="https://cdn.simpleicons.org/apachekafka/231F20" class="tech-icon">
+                <img title="Grafana" src="https://cdn.simpleicons.org/grafana/F46800" class="tech-icon">
+                <img title="Prometheus" src="https://cdn.simpleicons.org/prometheus/E6522C" class="tech-icon">
+                <img title="PyTorch" src="https://cdn.simpleicons.org/pytorch/EE4C2C" class="tech-icon">
+                <img title="TensorFlow" src="https://cdn.simpleicons.org/tensorflow/FF6F00" class="tech-icon">
+                <img title="Hugging Face" src="https://cdn.simpleicons.org/huggingface/FFD21E" class="tech-icon">
+                <img title="LangChain" src="https://cdn.simpleicons.org/langchain/1C3C3C" class="tech-icon">
+                <img title="MLflow" src="https://cdn.simpleicons.org/mlflow/0194E2" class="tech-icon">
+                <img title="Airflow" src="https://cdn.simpleicons.org/apacheairflow/017CEE" class="tech-icon">
+                <img title="GitLab" src="https://cdn.simpleicons.org/gitlab/FC6D26" class="tech-icon">
+                <img title="GitHub Actions" src="https://cdn.simpleicons.org/githubactions/2088FF" class="tech-icon">
+                <img title="n8n" src="https://cdn.simpleicons.org/n8n/EA4B71" class="tech-icon">
+                <img title="Zapier" src="https://cdn.simpleicons.org/zapier/FF4F00" class="tech-icon">
+                <img title="Apache" src="https://cdn.simpleicons.org/apache/017CEE" class="tech-icon">
+            </div>
+        </div>
+    </section>
 <section id="projects" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
         <div class="mb-16">
@@ -123,37 +232,40 @@
 </section>
 
 
-    <section id="skills" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 border-l-4 border-blue-500 pl-6">Technical Arsenal</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div>
-                    <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">Deep Learning & Frameworks</h5>
-                    <ul class="space-y-3 text-slate-300">
-                        <li>PyTorch & TensorFlow</li>
-                        <li>CNNs, RNNs, Transformers</li>
-                        <li>Computer Vision & NLP</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">MLOps & Cloud</h5>
-                    <ul class="space-y-3 text-slate-300">
-                        <li>AWS, GCP, Azure</li>
-                        <li>Docker & Kubernetes</li>
-                        <li>MLflow & Weights & Biases</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">Data Engineering</h5>
-                    <ul class="space-y-3 text-slate-300">
-                        <li>Spark, Airflow, Kafka</li>
-                        <li>NoSQL & ETL Pipelines</li>
-                        <li>Feature Engineering</li>
-                    </ul>
-                </div>
+<section id="skills" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-16 border-l-4 border-blue-500 pl-6">Technical Arsenal</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">AI, GenAI & Frameworks</h5>
+                <ul class="space-y-3 text-slate-300">
+                    <li><span class="text-white font-semibold">Frameworks:</span> PyTorch, TensorFlow, Keras</li>
+                    <li><span class="text-white font-semibold">LLMs & NLP:</span> LangChain, Hugging Face, Transformers</li>
+                    <li><span class="text-white font-semibold">Cloud AI:</span> Sagemaker, VertexAI</li>
+                    <li><span class="text-white font-semibold">Vector DB:</span> ChromaDB</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">Cloud, DevOps & MLOps</h5>
+                <ul class="space-y-3 text-slate-300">
+                    <li><span class="text-white font-semibold">Cloud:</span> AWS, GCP, Azure</li>
+                    <li><span class="text-white font-semibold">Infra:</span> Docker, Kubernetes, Terraform, Ansible</li>
+                    <li><span class="text-white font-semibold">MLOps:</span> Kubeflow, MLflow, GitHub Actions, GitLab</li>
+                    <li><span class="text-white font-semibold">Monitoring:</span> Grafana, Prometheus</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">Data Engineering & Tools</h5>
+                <ul class="space-y-3 text-slate-300">
+                    <li><span class="text-white font-semibold">Big Data:</span> Apache Spark, PySpark, Databricks</li>
+                    <li><span class="text-white font-semibold">Pipeline:</span> Airflow, Kafka, DBT, Dagster</li>
+                    <li><span class="text-white font-semibold">Storage:</span> Snowflake, BigQuery, Redshift, PostgreSQL, MongoDB</li>
+                    <li><span class="text-white font-semibold">Automation:</span> n8n, Zapier, PowerBI</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer class="py-12 bg-white border-t border-slate-200 text-center">
         <p class="text-slate-500 font-medium italic">"Building the next generation of efficient AI."</p>
@@ -167,4 +279,3 @@
 
 </body>
 </html>
-
