@@ -70,7 +70,7 @@
                 <a href="#about" class="hover:text-blue-600 transition">About</a>
                 <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
                 <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-                <a href="mailto:kushalmukhopadhyay8@gmail.com" class="text-blue-600 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Get In Touch</a>
+                <a href="#" onclick="openSafeMail(); return false;" class="text-blue-600 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Get In Touch</a>
             </div>
         </div>
     </nav>
@@ -95,7 +95,7 @@
         <div class="flex justify-center space-x-6">
             <a href="https://github.com/kushalmukhopadhyay" target="_blank" class="text-3xl hover:text-blue-600 transition"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/kushal-mukhopadhyay-88aa38291" target="_blank" class="text-3xl hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:kushalmukhopadhyay8@gmail.com" class="text-3xl hover:text-blue-600 transition"><i class="fas fa-envelope"></i></a>
+            <a href="#" onclick="openSafeMail(); return false;" class="text-3xl hover:text-blue-600 transition"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 </header>
@@ -692,6 +692,38 @@
         <p class="text-xs mt-8 text-slate-400">© 2024 Kushal Mukhopadhyay. Hosted on GitHub Pages.</p>
     </footer>
 <script>
+<script>
+    // --- SECURITY FUNCTION ---
+    function openSafeMail() {
+        // Change these two variables to your actual email
+        const user = "kushalmukhopadhyay8";      // Example: kushal.work
+        const domain = "gmail.com"; 
+        
+        // This puts it together only when clicked
+        window.location.href = "mailto:" + user + "@" + domain;
+    }
+
+    // --- YOUR EXISTING MODAL FUNCTIONS ---
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+        document.body.style.overflow = 'auto'; 
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('aaos-modal');
+        // Note: You might want to add listeners for other modals here too
+        if (event.target.classList.contains('backdrop-layer')) {
+            // This is a generic way to close any open modal
+            event.target.parentElement.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    }
+</script>
     function openModal(modalId) {
         document.getElementById(modalId).classList.remove('hidden');
         document.body.style.overflow = 'hidden'; // Stop background scrolling
@@ -712,4 +744,3 @@
 </script>
 </body>
 </html>
-
