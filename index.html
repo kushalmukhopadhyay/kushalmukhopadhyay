@@ -61,6 +61,7 @@
         <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" class="patch" style="top: 10%; right: -5%; width: 300px; --rot: -15deg;">
         <img src="https://cdn.simpleicons.org/pytorch/1e293b" class="patch" style="top: 40%; left: -5%; width: 250px; --rot: 10deg;">
         <img src="https://cdn.simpleicons.org/kubernetes/1e293b" class="patch" style="top: 80%; right: 10%; width: 200px; --rot: -10deg;">
+        
     </div>
     <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -168,69 +169,481 @@
 
         <div class="grid md:grid-cols-3 gap-8">
             
-            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6 text-green-600">
-                    <i class="fas fa-microchip text-xl"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-3">AAOS: Adaptive Accelerator Orchestration System</h4>
-                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                    Built a software-defined orchestration layer dynamically optimizing GPU/AI accelerator performance. 
-                    Handles memory, compute, tensor utilization, and scaling in real-time for LLMs, vision, and multimodal workloads.
-                </p>
-                <div class="text-xs font-bold text-slate-400 uppercase">
-                    PyTorch • NumPy • Streamlit • Hardware Orchestration • Multi-Accelerator Optimization
-                </div>
-            </div>
+<div onclick="openModal('aaos-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200 cursor-pointer group relative overflow-hidden">
+    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
+        Click for Details
+    </div>
+    
+    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6 text-green-600">
+        <i class="fas fa-microchip text-xl"></i>
+    </div>
+    <h4 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">AAOS: Adaptive Accelerator Orchestration System</h4>
+    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+        Built a software-defined orchestration layer dynamically optimizing GPU/AI accelerator performance. 
+        Handles memory, compute, tensor utilization, and scaling in real-time.
+    </p>
+    <div class="text-xs font-bold text-slate-400 uppercase">
+        PyTorch • NumPy • Streamlit • Hardware Orchestration
+    </div>
+</div>
 
-            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
-                    <i class="fas fa-cogs text-xl"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-3">LatentFuse v2</h4>
-                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                    Built a lightweight multimodal model fusing image and text via <strong>query-based latent attention</strong>. 
-                    Optimized with top-k token pruning and sparse cross-modal attention to drastically reduce FLOPs and memory usage compared to CLIP ViT-B/32.
-                </p>
-                <div class="text-xs font-bold text-slate-400 uppercase">ResNet-18 • DistilBERT • PyTorch AMP • Contrastive Learning</div>
-            </div>
+<div onclick="openModal('latent-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200 cursor-pointer group relative overflow-hidden">
+    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
+        Click for Details
+    </div>
 
-            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
-                    <i class="fas fa-file-pdf text-xl"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-3">Website & PDF QA System</h4>
-                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                    End-to-end RAG system using LangChain and Mixtral-8x7B. Optimized with FAISS vector store for real-time information retrieval.
-                </p>
-                <div class="text-xs font-bold text-slate-400 uppercase">LangChain • FAISS • Gradio</div>
-            </div>
+    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+        <i class="fas fa-cogs text-xl"></i>
+    </div>
+    <h4 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">LatentFuse v2: Efficient Multimodal Fusion</h4>
+    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+        Built a lightweight multimodal model fusing image (ResNet18) and text (DistilBert) via <strong>query-based sparse latent attention</strong>. 
+        The live demo profiles GFLOPs in real-time, demonstrating superior efficiency vs CLIP ViT-B/32.
+    </p>
+    <div class="text-xs font-bold text-slate-400 uppercase">
+        PyTorch • Transformers • Gradio • fvcore Profiling
+    </div>
+</div>
 
-            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6 text-red-600">
-                    <i class="fas fa-shield-alt text-xl"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-3">2-Stage LLM Guardrails</h4>
-                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                    Moderation pipeline detecting jailbreaks and PII leaks. Integrated toxic-BERT and JailbreakBench similarity checks.
-                </p>
-                <div class="text-xs font-bold text-slate-400 uppercase">Transformers • Toxic-BERT</div>
-            </div>
+<div onclick="openModal('qa-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200 cursor-pointer group relative overflow-hidden">
+    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
+        Click for Details
+    </div>
 
-            <div class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6 text-purple-600">
-                    <i class="fas fa-chart-line text-xl"></i>
+    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+        <i class="fas fa-file-pdf text-xl"></i>
+    </div>
+    <h4 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">Website & PDF QA System</h4>
+    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+        A Universal RAG (Retrieval-Augmented Generation) system capable of digesting both live URLs and PDF documents. 
+        Powered by LangChain and Mixtral-8x7B for high-fidelity Q&A.
+    </p>
+    <div class="text-xs font-bold text-slate-400 uppercase">
+        LangChain • FAISS • Mixtral-8x7B • Gradio
+    </div>
+</div>
+
+<div onclick="openModal('guard-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200 cursor-pointer group relative overflow-hidden">
+    <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
+        Click for Details
+    </div>
+
+    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6 text-red-600">
+        <i class="fas fa-shield-alt text-xl"></i>
+    </div>
+    <h4 class="text-xl font-bold mb-3 group-hover:text-red-600 transition-colors">2-Stage LLM Guardrails</h4>
+    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+        A hybrid moderation pipeline that intercepts harmful prompts and outputs. 
+        Combines semantic search against known jailbreaks with a BERT-based toxicity classifier for robust real-time filtering.
+    </p>
+    <div class="text-xs font-bold text-slate-400 uppercase">
+        Transformers • Toxic-BERT • Sentence-Transformers • JailbreakBench
+    </div>
+</div>
+
+<div onclick="openModal('meta-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200 cursor-pointer group relative overflow-hidden">
+    <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
+        Click for Details
+    </div>
+
+    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6 text-purple-600">
+        <i class="fas fa-dna text-xl"></i>
+    </div>
+    <h4 class="text-xl font-bold mb-3 group-hover:text-purple-600 transition-colors">MetaGlimpse: Automated Profiling Engine</h4>
+    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+        Dataset-agnostic engine generating feature importance and inter-feature relationships (Cramer’s V) for tabular data. 
+        Optimized with lazy-loading architecture.
+    </p>
+    <div class="text-xs font-bold text-slate-400 uppercase">
+        Pandas • Scikit-Learn • YData Profiling • Streamlit
+    </div>
+</div>
+    </div>
+
+</section>
+<div id="aaos-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="backdrop-layer fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border border-slate-200">
+                
+                <div class="absolute right-4 top-4 z-10">
+                    <button type="button" class="bg-white rounded-full p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition" onclick="closeModal('aaos-modal')">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
                 </div>
-                <h4 class="text-xl font-bold mb-3">Metadata & Profiling Engine</h4>
-                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                    Dataset-agnostic engine generating feature importance and inter-feature relationships (Cramer’s V) for tabular data.
-                </p>
-                <div class="text-xs font-bold text-slate-400 uppercase">Pandas • Scikit-Learn</div>
+
+                <div class="px-8 py-10 md:p-12">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 shrink-0">
+                                <i class="fas fa-microchip text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900">SmartOps (AAOS)</h3>
+                                <p class="text-slate-500 font-medium">Adaptive Accelerator Orchestration System</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://3ndygl2jgfheetufinfssz.streamlit.app/" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold shadow-md hover:bg-blue-700 hover:scale-105 transition shrink-0">
+                            <i class="fas fa-external-link-alt"></i> View Live Demo
+                        </a>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <p class="italic text-slate-700 font-medium">"Autonomous GPU resource optimization for hybrid AI pipelines."</p>
+                        </div>
+                        
+                        <p>
+                            SmartOps is a simulation engine designed to solve the "Static Configuration Problem" in ML infrastructure. It acts as a <strong>self-healing control plane</strong>, continuously monitoring hardware telemetry (VRAM, Latency, Bandwidth) to autonomously adjust pipeline hyperparameters in real-time. It eliminates manual tuning, prevents OOM crashes, and ensures strict latency SLAs.
+                        </p>
+
+                        <hr class="border-slate-100">
+
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Key Technical Features</h4>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>The "Brain" (Heuristic Policy Engine):</strong> A rule-based system that dynamically scales resources. It slashes physical batch sizes during latency spikes and boosts prefetch factors during data starvation.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>OOM Prevention & Recovery:</strong> Detects critical memory pressure (>95% VRAM) and triggers "defense modes," such as switching precision (FP32 → FP16) or decoupling physical from virtual batch sizes.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>Unified Priority Scheduler:</strong> Simulates a multi-tenant environment managing heterogeneous workloads (LLMs, Vision, Audio). It uses priority queuing to arbitrate resource contention.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Python</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">NumPy (Physics)</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Streamlit</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Pandas</span>
+                        </div>
+                        
+                        <div class="mt-6 bg-slate-900 text-slate-300 p-5 rounded-lg text-sm font-mono border-l-4 border-blue-500">
+                            <p class="mb-2 text-xs text-slate-500 uppercase tracking-widest">Resume Snippet</p>
+                            "Engineered a Python-based AIOps simulation that autonomously optimizes GPU VRAM and throughput. Implemented a dynamic scheduler for multi-tenant workloads and a self-healing control loop that adjusts batch size and precision to prevent OOM errors in real-time."
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+<div id="latent-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="backdrop-layer fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity"></div>
 
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border border-slate-200">
+                
+                <div class="absolute right-4 top-4 z-10">
+                    <button type="button" class="bg-white rounded-full p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition" onclick="closeModal('latent-modal')">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
 
+                <div class="px-8 py-10 md:p-12">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 shrink-0">
+                                <i class="fas fa-cogs text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900">LatentFuse v2</h3>
+                                <p class="text-slate-500 font-medium">Efficient Sparse Multimodal Attention</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://huggingface.co/spaces/10tenfirestorm/Latentfusion" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold shadow-md hover:bg-blue-700 hover:scale-105 transition shrink-0">
+                            <i class="fas fa-external-link-alt"></i> View Live Demo
+                        </a>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <p class="italic text-slate-700 font-medium">"Proving multimodal efficiency through real-time GFLOPs profiling."</p>
+                        </div>
+                        
+                        <p>
+                            Standard multimodal models like CLIP are computationally expensive. LatentFuse v2 addresses this by using efficient backbones (ResNet18 & DistilBert) and a novel <strong>sparse latent attention mechanism</strong>. Instead of attending to every token, a small set of learnable "latent queries" attend only to the top-k most relevant image and text features, decoupling computational cost from input size.
+                        </p>
+
+                        <hr class="border-slate-100">
+
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Key Technical Features</h4>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>Live Architecture Profiling:</strong> The Gradio demo instantiates the actual PyTorch model and uses <code>fvcore</code> to measure GFLOPs and parameter count in real-time, proving efficiency against a CLIP baseline.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>Sparse Latent Attention:</strong> Implemented a custom attention module where fixed, learnable query vectors attend to a pruned selection (top-k) of input tokens, significantly reducing attention map size.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>Hybrid Backbone Design:</strong> Combines the inductive biases of CNNs for images (ResNet18 truncated) with the contextual power of Transformers for text (DistilBert) for an optimal speed/accuracy trade-off.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">PyTorch</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Hugging Face Transformers</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Gradio</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">fvcore (Profiling)</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Plotly</span>
+                        </div>
+                        
+                        <div class="mt-6 bg-slate-900 text-slate-300 p-5 rounded-lg text-sm font-mono border-l-4 border-blue-500">
+                            <p class="mb-2 text-xs text-slate-500 uppercase tracking-widest">Resume Snippet</p>
+                            "Developed LatentFuse v2, an efficient multimodal model using sparse latent query attention to fuse ResNet18 and DistilBert features. Built a live Gradio profiler using fvcore to demonstrate a significant reduction in GFLOPs compared to CLIP ViT-B/32 while maintaining competitive accuracy."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="qa-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="backdrop-layer fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border border-slate-200">
+                
+                <div class="absolute right-4 top-4 z-10">
+                    <button type="button" class="bg-white rounded-full p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition" onclick="closeModal('qa-modal')">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="px-8 py-10 md:p-12">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 shrink-0">
+                                <i class="fas fa-file-pdf text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900">Website & PDF QA Bot</h3>
+                                <p class="text-slate-500 font-medium">Universal Retrieval-Augmented Generation (RAG)</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://huggingface.co/spaces/10tenfirestorm/doc-qa-bot" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold shadow-md hover:bg-blue-700 hover:scale-105 transition shrink-0">
+                            <i class="fas fa-external-link-alt"></i> View Live Demo
+                        </a>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <p class="italic text-slate-700 font-medium">"Chat with any document or website instantly."</p>
+                        </div>
+                        
+                        <p>
+                            This project bridges the gap between static knowledge (PDFs) and dynamic information (Websites) by creating a unified interface for questioning unstructured data. It utilizes a full RAG pipeline to ingest data, generate embeddings, and retrieve context for the Mixtral-8x7B LLM, ensuring answers are grounded in the provided source material rather than model hallucinations.
+                        </p>
+
+                        <hr class="border-slate-100">
+
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Key Technical Features</h4>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>Dual-Source Ingestion:</strong> Built custom loaders using <code>PyMuPDFLoader</code> for complex PDFs and <code>WebBaseLoader</code> for scraping live websites, merging them into a single vector index.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>Vector Search with FAISS:</strong> Implemented high-speed similarity search using FAISS (Facebook AI Similarity Search) and <code>sentence-transformers/all-MiniLM-L6-v2</code> embeddings to retrieve the most relevant context chunks.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span><strong>Mixtral-8x7B Integration:</strong> Leveraged the power of Mixture-of-Experts (MoE) via Hugging Face Hub inference API to provide high-quality, nuanced answers with low latency.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">LangChain</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">FAISS</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Mixtral-8x7B</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Gradio</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full border border-blue-100">Hugging Face API</span>
+                        </div>
+                        
+                        <div class="mt-6 bg-slate-900 text-slate-300 p-5 rounded-lg text-sm font-mono border-l-4 border-blue-500">
+                            <p class="mb-2 text-xs text-slate-500 uppercase tracking-widest">Resume Snippet</p>
+                            "Engineered a dual-source RAG system capable of ingesting PDFs and live URLs simultaneously. Integrated LangChain with FAISS vector stores and the Mixtral-8x7B model to deliver context-aware answers, reducing hallucination risks for domain-specific queries."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="guard-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="backdrop-layer fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border border-slate-200">
+                
+                <div class="absolute right-4 top-4 z-10">
+                    <button type="button" class="bg-white rounded-full p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition" onclick="closeModal('guard-modal')">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="px-8 py-10 md:p-12">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-red-600 shrink-0">
+                                <i class="fas fa-shield-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900">2-Stage LLM Guardrails</h3>
+                                <p class="text-slate-500 font-medium">Real-time Safety Filtering & Moderation</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://huggingface.co/spaces/10tenfirestorm/Guardrail-Project" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold shadow-md hover:bg-blue-700 hover:scale-105 transition shrink-0">
+                            <i class="fas fa-external-link-alt"></i> View Live Demo
+                        </a>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <p class="italic text-slate-700 font-medium">"Ensuring enterprise AI safety through a multi-layered defense system."</p>
+                        </div>
+                        
+                        <p>
+                            This project demonstrates a robust approach to securing LLM interactions. Instead of relying solely on prompt engineering, it implements a deterministic, multi-stage "firewall" that sits between the user and the model. It proactively detects and blocks adversarial inputs (jailbreaks) and filters toxic outputs in real-time.
+                        </p>
+
+                        <hr class="border-slate-100">
+
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Key Technical Features</h4>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-red-500 mt-1"></i>
+                                    <span><strong>Semantic Jailbreak Detection:</strong> Utilizes <code>sentence-transformers</code> to embed user prompts and compare them against a vector database of known malicious goals from the JailbreakBench dataset. High cosine similarity scores trigger an immediate block.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-red-500 mt-1"></i>
+                                    <span><strong>BERT-Based Toxic Content Filtering:</strong> Integrated the <code>unitary/toxic-bert</code> model to classify the tone of both inputs and outputs. It flags content for categories like threats, insults, and hate speech with high precision.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-red-500 mt-1"></i>
+                                    <span><strong>Heuristic & PII Checks:</strong> Implemented a foundational layer of regex-based checks to instantly catch PII leaks (like email addresses) and explicit banned keywords before more expensive model-based checks run.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full border border-red-100">Python</span>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full border border-red-100">Transformers</span>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full border border-red-100">Sentence-Transformers</span>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full border border-red-100">Gradio</span>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full border border-red-100">Hugging Face Datasets</span>
+                        </div>
+                        
+                        <div class="mt-6 bg-slate-900 text-slate-300 p-5 rounded-lg text-sm font-mono border-l-4 border-red-500">
+                            <p class="mb-2 text-xs text-slate-500 uppercase tracking-widest">Resume Snippet</p>
+                            "Developed a multi-stage guardrail system for enterprise LLM deployment. Combined semantic search against the JailbreakBench dataset to detect adversarial prompts with a BERT-based toxicity classifier to filter harmful content in real-time, ensuring compliance and safety."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="meta-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="backdrop-layer fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border border-slate-200">
+                
+                <div class="absolute right-4 top-4 z-10">
+                    <button type="button" class="bg-white rounded-full p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition" onclick="closeModal('meta-modal')">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="px-8 py-10 md:p-12">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 shrink-0">
+                                <i class="fas fa-dna text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900">MetaGlimpse</h3>
+                                <p class="text-slate-500 font-medium">Automated Metadata & Profiling Engine</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://ftemmvrq8pbjdjlqhoubcb.streamlit.app/" target="_blank" class="inline-flex items-center justify-center gap-2 bg-purple-600 text-white px-5 py-2.5 rounded-lg font-bold shadow-md hover:bg-purple-700 hover:scale-105 transition shrink-0">
+                            <i class="fas fa-external-link-alt"></i> View Live Demo
+                        </a>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <p class="italic text-slate-700 font-medium">"Instant dataset diagnostics and feature importance analysis."</p>
+                        </div>
+                        
+                        <p>
+                            MetaGlimpse is a "Dataset-Agnostic" analysis tool designed to solve the "cold start" problem in Data Science. It instantly ingests raw CSVs and outputs a standardized JSON schema describing quality, cardinality, and missingness, while automatically calculating target-aware feature importance without manual coding.
+                        </p>
+
+                        <hr class="border-slate-100">
+
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Key Technical Features</h4>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span><strong>Lazy-Loaded Architecture:</strong> Implemented deferred importing for heavy libraries (YData Profiling) to ensure instant app startup and optimize memory usage on cloud runtimes.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span><strong>Hybrid Importance Calculation:</strong> Dynamically selects between Mutual Information (entropy-based) and Pearson Correlation based on whether the target variable is detected as Categorical or Continuous.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span><strong>JSON-First Output:</strong> Generates machine-readable metadata schemas, enabling this tool to act as a pre-processing step for larger AutoML pipelines.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full border border-purple-100">Python</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full border border-purple-100">Scikit-Learn</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full border border-purple-100">Streamlit</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full border border-purple-100">YData Profiling</span>
+                        </div>
+                        
+                        <div class="mt-6 bg-slate-900 text-slate-300 p-5 rounded-lg text-sm font-mono border-l-4 border-purple-500">
+                            <p class="mb-2 text-xs text-slate-500 uppercase tracking-widest">Resume Snippet</p>
+                            "Built a dataset-agnostic EDA engine using Streamlit and YData Profiling. Implemented lazy-loading for heavy libraries to optimize startup time and developed a dynamic feature importance calculator using Mutual Information and Pearson correlation."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <section id="skills" class="py-20 bg-slate-900 text-white">
     <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-3xl font-bold mb-16 border-l-4 border-blue-500 pl-6">Technical Arsenal</h2>
@@ -240,6 +653,8 @@
                 <ul class="space-y-3 text-slate-300">
                     <li><span class="text-white font-semibold">Frameworks:</span> PyTorch, TensorFlow, Keras</li>
                     <li><span class="text-white font-semibold">LLMs & NLP:</span> LangChain, Hugging Face, Transformers</li>
+ <li><span class="text-white font-semibold">Model Serving:</span> FastAPI</li>
+
                     <li><span class="text-white font-semibold">Cloud AI:</span> Sagemaker, VertexAI</li>
                     <li><span class="text-white font-semibold">Vector DB:</span> ChromaDB</li>
                 </ul>
@@ -256,9 +671,10 @@
             <div>
                 <h5 class="text-blue-400 font-bold mb-6 uppercase tracking-wider">Data Engineering & Tools</h5>
                 <ul class="space-y-3 text-slate-300">
-                    <li><span class="text-white font-semibold">Big Data:</span> Apache Spark, PySpark, Databricks</li>
+                    <li><span class="text-white font-semibold">Big Data:</span> Apache Spark, PySpark, Databricks, Apache Flink</li>
                     <li><span class="text-white font-semibold">Pipeline:</span> Airflow, Kafka, DBT, Dagster</li>
                     <li><span class="text-white font-semibold">Storage:</span> Snowflake, BigQuery, Redshift, PostgreSQL, MongoDB</li>
+		<li><span class="text-white font-semibold">Governance:</span> Datahub</li>
                     <li><span class="text-white font-semibold">Automation:</span> n8n, Zapier, PowerBI</li>
                 </ul>
             </div>
@@ -275,7 +691,24 @@
         </div>
         <p class="text-xs mt-8 text-slate-400">© 2024 Kushal Mukhopadhyay. Hosted on GitHub Pages.</p>
     </footer>
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    }
 
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Restore background scrolling
+    }
+
+    // Close modal if clicking outside the content area
+    window.onclick = function(event) {
+        const modal = document.getElementById('aaos-modal');
+        if (event.target == modal.querySelector('.backdrop-layer')) {
+            closeModal('aaos-modal');
+        }
+    }
+</script>
 </body>
 </html>
-
