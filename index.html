@@ -168,43 +168,49 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            
-<div onclick="openModal('aaos-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200 cursor-pointer group relative overflow-hidden">
-    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
-        Click for Details
+<div onclick="openModal('aaos-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border-2 border-dashed border-amber-300 cursor-pointer group relative overflow-hidden">
+    <div class="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">
+        <i class="fas fa-hammer mr-1"></i> In Development
     </div>
     
-    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6 text-green-600">
+    <div class="absolute top-8 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
+        View Roadmap
+    </div>
+    
+    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6 text-amber-600">
         <i class="fas fa-microchip text-xl"></i>
     </div>
-    <h4 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">AAOS: Adaptive Accelerator Orchestration System</h4>
+    <h4 class="text-xl font-bold mb-3 group-hover:text-amber-600 transition-colors">AAOS: Adaptive Accelerator Orchestration System</h4>
     <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-        Built a software-defined orchestration layer dynamically optimizing GPU/AI accelerator performance. 
-        Handles memory, compute, tensor utilization, and scaling in real-time.
+        <strong>Currently developing</strong> a software-defined orchestration layer to dynamically optimize GPU/AI accelerator performance. 
+        Aiming to handle memory, compute, and tensor utilization in real-time.
     </p>
     <div class="text-xs font-bold text-slate-400 uppercase">
-        PyTorch • NumPy • Streamlit • Hardware Orchestration
+        PyTorch • NumPy • Hardware Orchestration • (WIP)
     </div>
 </div>
 
-<div onclick="openModal('latent-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200 cursor-pointer group relative overflow-hidden">
-    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
-        Click for Details
+<div onclick="openModal('latent-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border-2 border-dashed border-amber-300 cursor-pointer group relative overflow-hidden">
+    <div class="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">
+        <i class="fas fa-code-branch mr-1"></i> In Development
     </div>
 
-    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+    <div class="absolute top-8 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
+        View Architecture
+    </div>
+
+    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6 text-amber-600">
         <i class="fas fa-cogs text-xl"></i>
     </div>
-    <h4 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">LatentFuse v2: Efficient Multimodal Fusion</h4>
+    <h4 class="text-xl font-bold mb-3 group-hover:text-amber-600 transition-colors">LatentFuse v2: Efficient Multimodal Fusion</h4>
     <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-        Built a lightweight multimodal model fusing image (ResNet18) and text (DistilBert) via <strong>query-based sparse latent attention</strong>. 
-        The live demo profiles GFLOPs in real-time, demonstrating superior efficiency vs CLIP ViT-B/32.
+        <strong>Prototyping</strong> a lightweight multimodal model to fuse image (ResNet18) and text (DistilBert) via query-based sparse latent attention. 
+        Targeting superior efficiency vs CLIP ViT-B/32.
     </p>
     <div class="text-xs font-bold text-slate-400 uppercase">
-        PyTorch • Transformers • Gradio • fvcore Profiling
+        PyTorch • Transformers • Research Phase
     </div>
-</div>
-
+</div>            
 <div onclick="openModal('qa-modal')" class="project-card bg-slate-50 p-8 rounded-2xl border border-slate-200 cursor-pointer group relative overflow-hidden">
     <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity">
         Click for Details
